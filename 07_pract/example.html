@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="google-site-verification" content="tM6FcQiHeaJrBCqvBtDekSGZsVCx3QLY3cxOnvOQ6JU" />
+	<meta name="yandex-verification" content="70565fd6b38336ae" />
+
+	<link rel="stylesheet" href="https://ravesli.com/wp-content/themes/ravesli/style.css" type="text/css" media="screen" />
+	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="https://ravesli.com/feed/" />
+	<link rel="alternate" type="text/xml" title="RSS .92" href="https://ravesli.com/feed/rss/" />
+	<link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="https://ravesli.com/feed/atom/" />
+	<link rel="pingback" href="https://ravesli.com/xmlrpc.php" />
+
+	
+		<!-- All in One SEO 4.0.16 -->
+		<title>Введение в программирование | Уроки С++ - Ravesli</title>
+		<meta name="description" content="Компьютеры понимают только очень ограниченный набор инструкций, и чтобы заставить их что-то делать, нужно четко сформулировать задание, используя эти же инструкции. Программа (также «приложение» или «программное обеспечение», или «софт») - это набор инструкций, которые указывают компьютеру, что ему нужно делать. Физическая часть компьютера, которая выполняет эти инструкции, называется «железом» или аппаратной частью (например, процессор, материнская плата и т.д.). Данный урок является началом серии уроков по программированию на языке С++ для начинающих."/>
+		<link rel="canonical" href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/" />
+		<meta property="og:site_name" content="Ravesli" />
+		<meta property="og:type" content="article" />
+		<meta property="og:title" content="Введение в программирование | Уроки С++ - Ravesli" />
+		<meta property="og:description" content="Компьютеры понимают только очень ограниченный набор инструкций, и чтобы заставить их что-то делать, нужно четко сформулировать задание, используя эти же инструкции. Программа (также «приложение» или «программное обеспечение», или «софт») - это набор инструкций, которые указывают компьютеру, что ему нужно делать. Физическая часть компьютера, которая выполняет эти инструкции, называется «железом» или аппаратной частью (например, процессор, материнская плата и т.д.). Данный урок является началом серии уроков по программированию на языке С++ для начинающих." />
+		<meta property="og:url" content="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/" />
+		<meta property="og:image" content="https://ravesli.com/wp-content/uploads/2016/04/urok1.jpg" />
+		<meta property="og:image:secure_url" content="https://ravesli.com/wp-content/uploads/2016/04/urok1.jpg" />
+		<meta property="og:image:width" content="640" />
+		<meta property="og:image:height" content="480" />
+		<meta property="article:published_time" content="2016-04-01T23:07:18Z" />
+		<meta property="article:modified_time" content="2020-12-24T16:08:53Z" />
+		<meta property="twitter:card" content="summary" />
+		<meta property="twitter:site" content="@Ravesli" />
+		<meta property="twitter:domain" content="ravesli.com" />
+		<meta property="twitter:title" content="Введение в программирование | Уроки С++ - Ravesli" />
+		<meta property="twitter:description" content="Компьютеры понимают только очень ограниченный набор инструкций, и чтобы заставить их что-то делать, нужно четко сформулировать задание, используя эти же инструкции. Программа (также «приложение» или «программное обеспечение», или «софт») - это набор инструкций, которые указывают компьютеру, что ему нужно делать. Физическая часть компьютера, которая выполняет эти инструкции, называется «железом» или аппаратной частью (например, процессор, материнская плата и т.д.). Данный урок является началом серии уроков по программированию на языке С++ для начинающих." />
+		<meta property="twitter:image" content="https://ravesli.com/wp-content/uploads/2016/04/urok1.jpg" />
+		<meta name="google" content="nositelinkssearchbox" />
+		<script type="application/ld+json" class="aioseo-schema">
+			{"@context":"https:\/\/schema.org","@graph":[{"@type":"WebSite","@id":"https:\/\/ravesli.com\/#website","url":"https:\/\/ravesli.com\/","name":"Ravesli","publisher":{"@id":"https:\/\/ravesli.com\/#person"}},{"@type":"Person","@id":"https:\/\/ravesli.com\/#person","name":"\u042e\u0440\u0438\u0439 \u0412\u043e\u0440\u043e\u043d","image":{"@type":"ImageObject","@id":"https:\/\/ravesli.com\/urok-1-vvedenie-v-programmirovanie\/#personImage","url":"https:\/\/ravesli.com\/wp-content\/uploads\/2019\/03\/vkpablik3-150x150.jpg","width":"96","height":"96","caption":"\u042e\u0440\u0438\u0439 \u0412\u043e\u0440\u043e\u043d"}},{"@type":"BreadcrumbList","@id":"https:\/\/ravesli.com\/urok-1-vvedenie-v-programmirovanie\/#breadcrumblist","itemListElement":[{"@type":"ListItem","@id":"https:\/\/ravesli.com\/#listItem","position":"1","item":{"@id":"https:\/\/ravesli.com\/#item","name":"\u0413\u043b\u0430\u0432\u043d\u0430\u044f","description":"\u0423\u0440\u043e\u043a\u0438 \u0438 \u0442\u0443\u0442\u043e\u0440\u0438\u0430\u043b\u044b \u043f\u043e \u044f\u0437\u044b\u043a\u0430\u043c \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044f \u0434\u043b\u044f \u043d\u0430\u0447\u0438\u043d\u0430\u044e\u0449\u0438\u0445. \u041e\u0431\u044a\u044f\u0441\u043d\u044f\u0435\u043c \u0441\u043b\u043e\u0436\u043d\u044b\u0435 \u0432\u0435\u0449\u0438 \u043f\u0440\u043e\u0441\u0442\u044b\u043c\u0438 \u0441\u043b\u043e\u0432\u0430\u043c\u0438.","url":"https:\/\/ravesli.com\/"},"nextItem":"https:\/\/ravesli.com\/urok-1-vvedenie-v-programmirovanie\/#listItem"},{"@type":"ListItem","@id":"https:\/\/ravesli.com\/urok-1-vvedenie-v-programmirovanie\/#listItem","position":"2","item":{"@id":"https:\/\/ravesli.com\/urok-1-vvedenie-v-programmirovanie\/#item","name":"\u0423\u0440\u043e\u043a \u21161. \u0412\u0432\u0435\u0434\u0435\u043d\u0438\u0435 \u0432 \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u0435","description":"\u041a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u044b \u043f\u043e\u043d\u0438\u043c\u0430\u044e\u0442 \u0442\u043e\u043b\u044c\u043a\u043e \u043e\u0447\u0435\u043d\u044c \u043e\u0433\u0440\u0430\u043d\u0438\u0447\u0435\u043d\u043d\u044b\u0439 \u043d\u0430\u0431\u043e\u0440 \u0438\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0439, \u0438 \u0447\u0442\u043e\u0431\u044b \u0437\u0430\u0441\u0442\u0430\u0432\u0438\u0442\u044c \u0438\u0445 \u0447\u0442\u043e-\u0442\u043e \u0434\u0435\u043b\u0430\u0442\u044c, \u043d\u0443\u0436\u043d\u043e \u0447\u0435\u0442\u043a\u043e \u0441\u0444\u043e\u0440\u043c\u0443\u043b\u0438\u0440\u043e\u0432\u0430\u0442\u044c \u0437\u0430\u0434\u0430\u043d\u0438\u0435, \u0438\u0441\u043f\u043e\u043b\u044c\u0437\u0443\u044f \u044d\u0442\u0438 \u0436\u0435 \u0438\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438. \u041f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0430 (\u0442\u0430\u043a\u0436\u0435 \u00ab\u043f\u0440\u0438\u043b\u043e\u0436\u0435\u043d\u0438\u0435\u00bb \u0438\u043b\u0438 \u00ab\u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u043d\u043e\u0435 \u043e\u0431\u0435\u0441\u043f\u0435\u0447\u0435\u043d\u0438\u0435\u00bb, \u0438\u043b\u0438 \u00ab\u0441\u043e\u0444\u0442\u00bb) - \u044d\u0442\u043e \u043d\u0430\u0431\u043e\u0440 \u0438\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0439, \u043a\u043e\u0442\u043e\u0440\u044b\u0435 \u0443\u043a\u0430\u0437\u044b\u0432\u0430\u044e\u0442 \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u0443, \u0447\u0442\u043e \u0435\u043c\u0443 \u043d\u0443\u0436\u043d\u043e \u0434\u0435\u043b\u0430\u0442\u044c. \u0424\u0438\u0437\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0447\u0430\u0441\u0442\u044c \u043a\u043e\u043c\u043f\u044c\u044e\u0442\u0435\u0440\u0430, \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u0432\u044b\u043f\u043e\u043b\u043d\u044f\u0435\u0442 \u044d\u0442\u0438 \u0438\u043d\u0441\u0442\u0440\u0443\u043a\u0446\u0438\u0438, \u043d\u0430\u0437\u044b\u0432\u0430\u0435\u0442\u0441\u044f \u00ab\u0436\u0435\u043b\u0435\u0437\u043e\u043c\u00bb \u0438\u043b\u0438 \u0430\u043f\u043f\u0430\u0440\u0430\u0442\u043d\u043e\u0439 \u0447\u0430\u0441\u0442\u044c\u044e (\u043d\u0430\u043f\u0440\u0438\u043c\u0435\u0440, \u043f\u0440\u043e\u0446\u0435\u0441\u0441\u043e\u0440, \u043c\u0430\u0442\u0435\u0440\u0438\u043d\u0441\u043a\u0430\u044f \u043f\u043b\u0430\u0442\u0430 \u0438 \u0442.\u0434.). \u0414\u0430\u043d\u043d\u044b\u0439 \u0443\u0440\u043e\u043a \u044f\u0432\u043b\u044f\u0435\u0442\u0441\u044f \u043d\u0430\u0447\u0430\u043b\u043e\u043c \u0441\u0435\u0440\u0438\u0438 \u0443\u0440\u043e\u043a\u043e\u0432 \u043f\u043e \u043f\u0440\u043e\u0433\u0440\u0430\u043c\u043c\u0438\u0440\u043e\u0432\u0430\u043d\u0438\u044e \u043d\u0430 \u044f\u0437\u044b\u043a\u0435 \u0421++ \u0434\u043b\u044f \u043d\u0430\u0447\u0438\u043d\u0430\u044e\u0449\u0438\u0445.","url":"https:\/\/ravesli.com\/urok-1-vvedenie-v-programmirovanie\/"},"previousItem":"https:\/\/ravesli.com\/#listItem"}]},{"@type":"Person","@id":"https:\/\/ravesli.com\/author\/yura_ravesli\/#author","url":"https:\/\/ravesli.com\/author\/yura_ravesli\/","name":"\u042e\u0440\u0438\u0439 \u0412\u043e\u0440\u043e\u043d","image":{"@type":"ImageObject","@id":"https:\/\/ravesli.com\/urok-1-vvedenie-v-programmirovanie\/#authorImage","url":"https:\/\/ravesli.com\/wp-content\/uploads\/2019\/03\/vkpablik3-150x150.jpg","width":"96","height":"96","caption":"\u042e\u0440\u0438\u0439 \u0412\u043e\u0440\u043e\u043d"}}]}
+		</script>
+		<!-- All in One SEO -->
+
+<link rel='dns-prefetch' href='//s.w.org' />
+<link rel="alternate" type="application/rss+xml" title="Ravesli &raquo; Лента комментариев к &laquo;Урок №1. Введение в программирование&raquo;" href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/feed/" />
+		<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/13.0.1\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/ravesli.com\/wp-includes\/js\/wp-emoji-release.min.js"}};
+			!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode;p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0);e=i.toDataURL();return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(!p||!p.fillText)return!1;switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([55357,56424,8205,55356,57212],[55357,56424,8203,55356,57212])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(n=t.source||{}).concatemoji?c(n.concatemoji):n.wpemoji&&n.twemoji&&(c(n.twemoji),c(n.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='crayon-css'  href='https://ravesli.com/wp-content/plugins/crayon-syntax-highlighter/css/min/crayon.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-block-library-css'  href='https://ravesli.com/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='stcr-font-awesome-css'  href='https://ravesli.com/wp-content/plugins/subscribe-to-comments-reloaded/includes/css/font-awesome.min.css' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-postratings-css'  href='https://ravesli.com/wp-content/plugins/wp-postratings/css/postratings-css.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://ravesli.com/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://ravesli.com/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='crayon_js-js-extra'>
+/* <![CDATA[ */
+var CrayonSyntaxSettings = {"version":"_2.7.2_beta","is_admin":"0","ajaxurl":"https:\/\/ravesli.com\/wp-admin\/admin-ajax.php","prefix":"crayon-","setting":"crayon-setting","selected":"crayon-setting-selected","changed":"crayon-setting-changed","special":"crayon-setting-special","orig_value":"data-orig-value","debug":""};
+var CrayonSyntaxStrings = {"copy":"Press %s to Copy, %s to Paste","minimize":"Click To Expand Code"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://ravesli.com/wp-content/plugins/crayon-syntax-highlighter/js/min/crayon.min.js' id='crayon_js-js'></script>
+<link rel="https://api.w.org/" href="https://ravesli.com/wp-json/" /><link rel="alternate" type="application/json" href="https://ravesli.com/wp-json/wp/v2/posts/1377" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://ravesli.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://ravesli.com/wp-includes/wlwmanifest.xml" /> 
+<link rel='shortlink' href='https://ravesli.com/?p=1377' />
+<link rel="alternate" type="application/json+oembed" href="https://ravesli.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fravesli.com%2Furok-1-vvedenie-v-programmirovanie%2F" />
+<link rel="alternate" type="text/xml+oembed" href="https://ravesli.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fravesli.com%2Furok-1-vvedenie-v-programmirovanie%2F&#038;format=xml" />
+
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+	<link href='https://fonts.googleapis.com/css?family=Chewy' rel='stylesheet' type='text/css' />
+	
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script type="text/javascript" src="https://ravesli.com/wp-content/themes/ravesli/jquery.cookie.js"></script>
+
+<link href='https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700,700italic&amp;subset=latin,cyrillic' rel='stylesheet' type='text/css' />
+
+
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="https://ravesli.com/wp-content/themes/ravesli/favicon.ico" type="image/x-icon" />
+
+	
+	<script data-ad-client="ca-pub-1157306330783763" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+	
+
+
+
+	
+</head>
+<body class="preload" itemscope itemtype="http://schema.org/WebPage">
+<div id="block-body"> <!--Блок зі всім-->
+<header>
+<div id="block-header"> <!--Блок хедера-->
+	
+
+	
+<div id="block-nadpis">
+<div class="button-container-1">
+	<span class="mas">Ravesli</span>
+	<a href="/" id="work">Ravesli</a>
+</div>
+</div>
+
+
+
+<nav>
+<div id="block-menu">
+<ul class="menu">
+
+
+
+	<li><a class="anim-middleout" href="/uroki-cpp/">Уроки по C++</a></li>
+	<li><a class="anim-middleout" href="/uroki-po-opengl/">OpenGL</a></li>
+	<li><a class="anim-middleout" href="/uroki-po-sfml/">SFML</a></li>
+	<li><a class="anim-middleout" href="/uroki-po-qt5/">Qt5</a></li>
+		<li><a class="anim-middleout" href="/uroki-po-regexp/">RegExp</a></li>
+	<li><a class="anim-middleout" href="/uroki-assemblera/">Ассемблер</a></li>
+		<li><a class="anim-middleout" href="/uroki-po-linux/">Linux</a></li>
+		<li><a class="anim-middleout" href="/buy-product/" style="background: #2980b9;">Купить .PDF</a></li>
+	
+
+
+
+
+</ul>
+</div>
+</nav>
+
+
+</div> <!--Кінець block-header-->
+</header>
+<div class="block-content" id="block-content-single">
+
+<section>
+
+<script>
+$(function() {
+ $.fn.scrollToTop = function() {
+  $(this).hide().removeAttr("href");
+  if ($(window).scrollTop() >= "250") $(this).fadeIn("fast")
+  var scrollDiv = $(this);
+  $(window).scroll(function() {
+   if ($(window).scrollTop() <= "250") $(scrollDiv).fadeOut("fast")
+   else $(scrollDiv).fadeIn("fast")
+  });
+  $(this).click(function() {
+   $("html, body").animate({scrollTop: 0}, "fast")
+  })
+ }
+});
+
+$(function() {
+ $("#scrollup").scrollToTop();
+});
+</script>
+<div id="scrollup"><i class="fa fa-fighter-jet fa-3x fa-rotate-270"></i></div>
+
+<div class="sam-content">
+
+
+
+
+<h1 class="zagolovokstat">Урок №1. Введение в программирование</h1>
+	
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e19d0f6e5c76fb3"></script>
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox"></div>
+	
+<p class="data" style="float: none; line-height: 15px; margin-top: 25px;"><i class="fa fa-user">&nbsp;&nbsp;</i><a href="https://ravesli.com/author/yura_ravesli/" class="data" style="float: none; line-height: 15px;" target="_blank">Юрий</a>&nbsp;&nbsp;|&nbsp;</p>
+	
+	<div class="catsingle"><ul class="post-categories">
+	<li><a href="https://ravesli.com/category/uroki-s/" rel="category tag">Уроки С++</a></li></ul>&nbsp;&nbsp;|&nbsp;</div>
+
+
+<p class="data" style="float: none; line-height: 15px;"><i class="fas fa-pen-nib"></i>&nbsp;&nbsp;Обновл. 24 Дек 2020&nbsp;&nbsp;|&nbsp;</p>
+
+	
+	
+
+	
+	<div class="catsingle" style="padding-bottom: 20px;"><i class="fa fa-eye" aria-hidden="true"></i>&nbsp;197707 </div>
+
+		<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comments"><p class="data" style="float: none;">&nbsp;&#448;&nbsp;&nbsp;<i class="fa fa-comments"></i>&nbsp;55&nbsp;</p></a>
+
+
+	
+<div class="content">
+<p>Компьютеры понимают только очень ограниченный набор инструкций, и чтобы заставить их что-то делать, нужно четко сформулировать задание, используя эти же инструкции. <strong>Программа</strong> (также «<em>приложение</em>» или «<em>программное обеспечение</em>», или «<em>софт</em>») &#8212; это набор инструкций, которые указывают компьютеру, что ему нужно делать. Физическая часть компьютера, которая выполняет эти инструкции, называется <strong><em>«железом»</em></strong> или <em><strong>аппаратной частью</strong></em> (например, процессор, материнская плата и т.д.). Данный урок является началом серии уроков по программированию на языке С++ для начинающих.</p>
+<div class="toc">
+<div class="czagvstat">Оглавление:</div>
+<div class="toc_list">
+<ol>
+<li class="toc_item"><a href="#toc-0">Машинный язык</a></li>
+<li class="toc_item"><a href="#toc-1">Язык ассемблера</a></li>
+<li class="toc_item"><a href="#toc-2">Высокоуровневые языки программирования</a></li>
+<li class="toc_item"><a href="#toc-3">Преимущества высокоуровневых языков программирования</a></li>
+</ol>
+</div>
+</div>
+<p><a style="text-decoration: none;" name="toc-0"></a></p>
+<h2 class="czagvstat">Машинный язык</h2>
+<p>Процессор компьютера не способен понимать напрямую языки программирования, такие как C++, Java, Python и т.д. Очень ограниченный набор инструкций, которые изначально понимает процессор, называется <strong>машинным кодом</strong> (или <strong><em>«машинным языком»</em></strong>). То, как эти инструкции организованы, выходит за рамки данного введения, но стоит отметить две вещи.</p>
+<p>Во-первых, каждая команда (инструкция) состоит только из определенной последовательности (набора) цифр: <code style="font-size: 1.2em;">0</code> и <code style="font-size: 1.2em;">1</code>. Эти числа называются <strong>битами</strong> (сокр. от <em>«<strong>bi</strong>nary digi<strong>t</strong>»</em>) или <strong>двоичным кодом</strong>.</p>
+<p>Например, одна команда машинного кода архитектуры ×86 выглядит следующим образом:</p>
+<p><code style="font-size: 1.2em;">10110000 01100001</code></p>
+<p>Во-вторых, каждый набор бит переводится процессором в инструкции для выполнения определенного задания (например, <em>сравнить два числа</em> или <em>переместить число в определенную ячейку памяти</em>). Разные типы процессоров обычно имеют разные наборы инструкций, поэтому инструкции, которые будут работать на процессорах Intel (используются в персональных компьютерах), с большей долей вероятности, не будут работать на процессорах Xenon (используются в игровых приставках Xbox). Раньше, когда компьютеры только начинали массово распространяться, программисты должны были писать программы непосредственно на машинном языке, что было очень неудобно, сложно и занимало намного больше времени, чем сейчас.<br />
+<a style="text-decoration: none;" name="toc-1"></a></p>
+<h2 class="czagvstat">Язык ассемблера</h2><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1157306330783763"
+     data-ad-slot="9477964340"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><br />
+<p>Так как программировать на машинном языке &#8212; удовольствие специфическое, то программисты изобрели язык ассемблера. В этом языке каждая команда идентифицируется коротким именем (а не набором единиц с нулями), и переменными можно управлять через их имена. Таким образом, писать/читать код стало гораздо легче. Тем не менее, процессор все равно не понимает язык ассемблера напрямую. Его также нужно переводить, с помощью ассемблера, в машинный код. <strong>Ассемблер </strong>— это транслятор (переводчик), который переводит код, написанный на языке ассемблера, в машинный язык. В Интернете язык ассемблера часто называют просто <em>&#171;Ассемблер&#187;</em>.</p>
+<p>Преимуществом Ассемблера является его производительность (точнее скорость выполнения) и он до сих пор используется, когда это имеет решающее значение. Тем не менее, причина подобного преимущества заключается в том, что программирование на этом языке адаптируется к конкретному процессору. Программы, адаптированные под один процессор, не будут работать с другим. Кроме того, чтобы программировать на Ассемблере, по-прежнему нужно знать очень много не очень читабельных инструкций для выполнения даже простого задания.</p>
+<p>Например, вот вышеприведенная команда, но уже на языке ассемблера:</p>
+<p><code style="font-size: 1.2em;">mov al, 061h</code><br />
+<a style="text-decoration: none;" name="toc-2"></a></p>
+<h2 class="czagvstat">Высокоуровневые языки программирования</h2>
+<p>Для решения проблем читабельности кода и чрезмерной сложности были разработаны высокоуровневые языки программирования. C, C++, Pascal, Java, JavaScript и Perl &#8212; это всё <strong>языки высокого уровня</strong>. Они позволяют писать и выполнять программы, не переживая о совместимости кода с разными архитектурами процессоров. Программы, написанные на языках высокого уровня, также должны быть переведены в машинный код перед выполнением. Есть два варианта:</p>
+<p style="padding-left: 20px;"><i class="fas fa-arrow-right fa-md"></i>   компиляция, которая выполняется компилятором;</p>
+<p style="padding-left: 20px;"><i class="fas fa-arrow-right fa-md"></i>   интерпретация, которая выполняется интерпретатором.</p>
+<p><strong>Компилятор</strong> — это программа, которая читает код и создает автономную (способную работать независимо от другого аппаратного или программного обеспечения) исполняемую программу, которую процессор понимает напрямую. При запуске программы весь код компилируется целиком, а затем создается исполняемый файл и уже при повторном запуске программы компиляция не выполняется.</p>
+<p>Проще говоря, процесс компиляции выглядит следующим образом:</p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-4168" src="https://ravesli.com/wp-content/uploads/2016/04/sxemagotovoOk.jpg" alt="" width="625" height="185" srcset="https://ravesli.com/wp-content/uploads/2016/04/sxemagotovoOk.jpg 625w, https://ravesli.com/wp-content/uploads/2016/04/sxemagotovoOk-300x89.jpg 300w, https://ravesli.com/wp-content/uploads/2016/04/sxemagotovoOk-283x84.jpg 283w" sizes="(max-width: 625px) 100vw, 625px" /></p>
+<p><strong>Интерпретатор</strong> &#8212; это программа, которая напрямую выполняет код, без его предыдущей компиляции в исполняемый файл. Интерпретаторы более гибкие, но менее эффективные, так как процесс интерпретации выполняется повторно при каждом запуске программы.</p>
+<p>Процесс интерпретации:<strong><em> </em></strong></p>
+<p><img loading="lazy" class="aligncenter size-full wp-image-4169" src="https://ravesli.com/wp-content/uploads/2016/04/sxemagotovo22Ok.jpg" alt="" width="800" height="100" srcset="https://ravesli.com/wp-content/uploads/2016/04/sxemagotovo22Ok.jpg 800w, https://ravesli.com/wp-content/uploads/2016/04/sxemagotovo22Ok-300x38.jpg 300w, https://ravesli.com/wp-content/uploads/2016/04/sxemagotovo22Ok-768x96.jpg 768w, https://ravesli.com/wp-content/uploads/2016/04/sxemagotovo22Ok-283x35.jpg 283w" sizes="(max-width: 800px) 100vw, 800px" /></p>
+<p>Любой язык программирования может быть компилируемым или интерпретируемым, однако, такие языки, как C, C++ и Pascal &#8212; компилируются, в то время как &#171;скриптовые&#187; языки, такие, как Perl и JavaScript &#8212; интерпретируются. Некоторые языки программирования (например, Java) могут как компилироваться, так и интерпретироваться.<br />
+<a style="text-decoration: none;" name="toc-3"></a></p>
+<h2 class="czagvstat">Преимущества высокоуровневых языков программирования</h2><script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block; text-align:center;"
+     data-ad-layout="in-article"
+     data-ad-format="fluid"
+     data-ad-client="ca-pub-1157306330783763"
+     data-ad-slot="9477964340"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script><br />
+<p><strong><em>Преимущество №1</em>:</strong> Легче писать/читать код. Вот вышеприведенная команда, но уже на языке C++:</p>
+<p><code style="font-size: 1.2em;">а = 97;</code></p>
+<p><strong><em>Преимущество №2:</em></strong> Требуется меньше инструкций для выполнения определенного задания. В языке C++ вы можете сделать что-то вроде <code style="font-size: 1.2em;">а = Ь * 2 + 5;</code> в одной строке. В языке ассемблера вам пришлось бы использовать 5 или 6 инструкций.</p>
+<p><strong><em>Преимущество №3:</em></strong> Вы не должны заботиться о таких деталях, как загрузка переменных в регистры процессора. Компилятор или интерпретатор берёт это на себя.</p>
+<p><strong><em>Преимущество №4:</em></strong> Высокоуровневые языки программирования более портируемые под различные архитектуры (но есть один нюанс).<img loading="lazy" class="aligncenter size-full wp-image-1411" src="/wp-content/uploads/2016/04/sxemagotovo33.jpg" alt="sxemagotovo33" width="650" height="300" srcset="https://ravesli.com/wp-content/uploads/2016/04/sxemagotovo33.jpg 650w, https://ravesli.com/wp-content/uploads/2016/04/sxemagotovo33-300x138.jpg 300w, https://ravesli.com/wp-content/uploads/2016/04/sxemagotovo33-283x131.jpg 283w" sizes="(max-width: 650px) 100vw, 650px" />Нюанс заключается в том, что многие платформы, такие как Microsoft Windows, имеют свои собственные специфические функции, с помощью которых писать код намного легче. Но в таком случае приходится жертвовать портируемостью, так как функции, специфические для одной платформы, с большей долей вероятности, не будут работать на другой платформе. Обо всем этом мы детально поговорим на следующих уроках.</p>
+</h2>
+
+<div class="ratings" style="text-align: center; margin-top: 45px;">
+<p>Оценить статью:</p>
+<div id="post-ratings-1377" class="post-ratings" itemscope itemtype="http://schema.org/Article" data-nonce="6b8a39f852"><img id="rating_1377_1" src="https://ravesli.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_on.gif" alt="Звёзд: 1" title="Звёзд: 1" onmouseover="current_rating(1377, 1, 'Звёзд: 1');" onmouseout="ratings_off(4.9, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_1377_2" src="https://ravesli.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_on.gif" alt="Звёзд: 2" title="Звёзд: 2" onmouseover="current_rating(1377, 2, 'Звёзд: 2');" onmouseout="ratings_off(4.9, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_1377_3" src="https://ravesli.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_on.gif" alt="Звёзд: 3" title="Звёзд: 3" onmouseover="current_rating(1377, 3, 'Звёзд: 3');" onmouseout="ratings_off(4.9, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_1377_4" src="https://ravesli.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_on.gif" alt="Звёзд: 4" title="Звёзд: 4" onmouseover="current_rating(1377, 4, 'Звёзд: 4');" onmouseout="ratings_off(4.9, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /><img id="rating_1377_5" src="https://ravesli.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_half.gif" alt="Звёзд: 5" title="Звёзд: 5" onmouseover="current_rating(1377, 5, 'Звёзд: 5');" onmouseout="ratings_off(4.9, 5, 0);" onclick="rate_post();" onkeypress="rate_post();" style="cursor: pointer; border: 0px;" /> (<strong>2&nbsp;023</strong> оценок, среднее: <strong>4,87</strong> из 5)<br /><span class="post-ratings-text" id="ratings_1377_text"></span><meta itemprop="name" content="Урок №1. Введение в программирование" /><meta itemprop="headline" content="Урок №1. Введение в программирование" /><meta itemprop="description" content="Компьютеры понимают только очень ограниченный набор инструкций, и чтобы заставить их что-то делать, нужно четко сформулировать задание, используя эти же инструкции. Программа (также &laquo;приложение&raquo; или &laquo;..." /><meta itemprop="datePublished" content="2016-04-02T02:07:18+03:00" /><meta itemprop="dateModified" content="2020-12-24T19:08:53+03:00" /><meta itemprop="url" content="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/" /><meta itemprop="author" content="Юрий" /><meta itemprop="mainEntityOfPage" content="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/" /><div style="display: none;" itemprop="image" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://ravesli.com/wp-content/uploads/2016/04/urok1-150x150.jpg" /><meta itemprop="width" content="150" /><meta itemprop="height" content="150" /></div><div style="display: none;" itemprop="publisher" itemscope itemtype="https://schema.org/Organization"><meta itemprop="name" content="Ravesli" /><meta itemprop="url" content="https://ravesli.com" /><div itemprop="logo" itemscope itemtype="https://schema.org/ImageObject"><meta itemprop="url" content="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3.jpg" /></div></div></div><div id="post-ratings-1377-loading" class="post-ratings-loading"><img src="https://ravesli.com/wp-content/plugins/wp-postratings/images/loading.gif" width="16" height="16" class="post-ratings-image" /> Загрузка...</div>	</div>
+	
+
+	
+
+
+<!-- uSocial -->
+<div class="social-share-buttons">
+<p class="share-text"><strong>Поделиться в социальных сетях:</strong></p>
+<div style="margin-top: 20px;">
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e19d0f6e5c76fb3"></script>
+
+<!-- Go to www.addthis.com/dashboard to customize your tools -->
+<div class="addthis_inline_share_toolbox_hv0g"></div>
+</div>
+</div>
+<!-- /uSocial -->
+	
+
+
+
+</div>
+
+<div class="paginationstat">
+	<div class="icleft"></div>
+
+
+	<div class="icright"><a href="https://ravesli.com/urok-2-vvedenie-v-yazyki-programmirovaniya-c-i-s/" rel="next"><div class="text-paginationstat2">Урок №2. Введение в языки программирования C и С++<i class="fa fa-arrow-circle-right" aria-hidden="true"></i><span><i class="fa fa-arrow-circle-right fa-3x icon-pagination"></i></span></div></a></div>
+
+</div>
+
+<script>
+$('.hidd').click(function() {
+  $(this).toggleClass('active23').next()[$(this).next().is(':hidden') ? "slideDown" : "slideUp"](300);
+});
+</script>
+
+
+	
+<div class="relatedp">
+		<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-format="autorelaxed"
+     data-ad-client="ca-pub-1157306330783763"
+     data-ad-slot="2514287394"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	
+</div>
+
+
+
+<div class="comentu">
+
+<div id="comments" class="comments-area">
+
+			<h2 class="comments-title">
+			 Комментариев: 55 		</h2>
+
+		<ol class="comment-list">
+				<li class="comment even thread-even depth-1 parent" id="comment-14493">
+				<div id="div-comment-14493" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/3baf18eb6d5311f6d287e2193e32314a?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Andrew</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-14493">30 января 2021 в 10:29</a>		</div>
+
+		<p>Добрый день, Юрий.<br />
+Задам вопрос, который наверняка интересует многих.<br />
+На сколько условных часов (дней, недель) рассчитан ваш курс при, допустим, пятидневной учебной неделе.<br />
+ Понятно, что это очень условно и индивидуально, но я думаю такая статистика или что-то, типа &quot;учебного плана&quot;, возможно у вас есть.<br />
+ С уважением.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=14493#respond' data-commentid="14493" data-postid="1377" data-belowelement="div-comment-14493" data-respondelement="respond" data-replyto="Комментарий к записи Andrew" aria-label='Комментарий к записи Andrew'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor odd alt depth-2" id="comment-14516">
+				<div id="div-comment-14516" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-14516">31 января 2021 в 23:10</a>		</div>
+
+		<p>Здравствуйте! Как вы уже подметили, это очень условно и индивидуально, зависит от учащегося, его опыта и скорости прогрессирования, поэтому могу сказать только в общих чертах &#8212; без опыта за полгода-год можно пройти не спеша (1-2 урока в день). А то, как человек усваивает материал, сколько раз ему нужно перечитать то, что он не понял, делает ли он самостоятельно задания после уроков и проходит ли итоговые тесты &#8212; это всё также нужно учитывать.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=14516#respond' data-commentid="14516" data-postid="1377" data-belowelement="div-comment-14516" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-12302">
+				<div id="div-comment-12302" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/d56eb4417f133ceb1979c942d19da5a3?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Ян</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-12302">7 сентября 2020 в 12:48</a>		</div>
+
+		<p>Скажите пожалуйста, а будет-ли статья по написанию компилятора для своего языка программирования? Какие инструменты при этом нужно использовать? Какую литературу почитать? И т.д. А то до меня все никак не доходит как создаются языки программирования. Читал на других сайтах, но так ничего и не понял, ибо пишут поверхностно. Собственно хотелось-бы лучше узнать как это все взаимодействует между собой на практике&#8230;</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=12302#respond' data-commentid="12302" data-postid="1377" data-belowelement="div-comment-12302" data-respondelement="respond" data-replyto="Комментарий к записи Ян" aria-label='Комментарий к записи Ян'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment odd alt depth-2" id="comment-14310">
+				<div id="div-comment-14310" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/32f9a6ecf4f230dcc5a7ecab75f1e206?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Даниил</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-14310">14 января 2021 в 12:19</a>		</div>
+
+		<p>Эта тема довольно сложная. Наилучший вариант &#8212; найти &quot;Книгу дракона&quot; (она так и называется). Там подробно описано, как создаются языки, и как под них делаются компиляторы или интерпретаторы.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=14310#respond' data-commentid="14310" data-postid="1377" data-belowelement="div-comment-14310" data-respondelement="respond" data-replyto="Комментарий к записи Даниил" aria-label='Комментарий к записи Даниил'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-12183">
+				<div id="div-comment-12183" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/1ca2430ee8c5b971ea36ff6a5af54524?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Макс</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-12183">29 августа 2020 в 18:26</a>		</div>
+
+		<p>Да, всё супер!  Ни разу не программист, но читается легко и интересно!<br />
+🙂</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=12183#respond' data-commentid="12183" data-postid="1377" data-belowelement="div-comment-12183" data-respondelement="respond" data-replyto="Комментарий к записи Макс" aria-label='Комментарий к записи Макс'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-12080">
+				<div id="div-comment-12080" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/d56eb4417f133ceb1979c942d19da5a3?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Глеб</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-12080">24 августа 2020 в 22:15</a>		</div>
+
+		<p>Как я рад что существует такой великолепный сайт, как Ravesli.com, где можно черпать глубокие знания по изучению С++. Это лучший сайт из всех которые я когда-либо находил. Единственное, есть только один небольшой минус, &#8212; это отсутствие других языков программирования. Хотелось-бы увидеть другие языки, к примеру &#8212; Java. Прошу курсы по Java добавить, т.к. нигде такой детально-изложенной информации по изучению не нашел&#8230;</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=12080#respond' data-commentid="12080" data-postid="1377" data-belowelement="div-comment-12080" data-respondelement="respond" data-replyto="Комментарий к записи Глеб" aria-label='Комментарий к записи Глеб'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor even depth-2" id="comment-12093">
+				<div id="div-comment-12093" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-12093">25 августа 2020 в 17:38</a>		</div>
+
+		<p>Пока что по Java ничего не планируется)</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=12093#respond' data-commentid="12093" data-postid="1377" data-belowelement="div-comment-12093" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-9609">
+				<div id="div-comment-9609" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/d269584e9295118f80648048d8896168?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">cybersatori</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-9609">17 апреля 2020 в 16:31</a>		</div>
+
+		<p>Поделюсь. На усвоение базового курса ушло 3 месяца и 330 часов (по 3 часа в день). Информация подана отлично и в базовых концепциях я теперь разбираюсь. Спасибо Юрию за перевод. Ничего более путного и сжатого в рунете нет по сабжу.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=9609#respond' data-commentid="9609" data-postid="1377" data-belowelement="div-comment-9609" data-respondelement="respond" data-replyto="Комментарий к записи cybersatori" aria-label='Комментарий к записи cybersatori'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-9220">
+				<div id="div-comment-9220" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/066d9187b32916bd606d9dadefe5c82a?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Сергей</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-9220">24 марта 2020 в 20:38</a>		</div>
+
+		<p>наконец-то, я увидел свет. спасибо!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=9220#respond' data-commentid="9220" data-postid="1377" data-belowelement="div-comment-9220" data-respondelement="respond" data-replyto="Комментарий к записи Сергей" aria-label='Комментарий к записи Сергей'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-7410">
+				<div id="div-comment-7410" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/432fcc01cab953cd26d2b9eecdfb7bf1?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Александр</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-7410">28 ноября 2019 в 04:36</a>		</div>
+
+		<p>Здравствуйте Юрий! Прочитал все комментарии, благодарю вас за самоотверженность и желание учиться и учить. Уже больше года изучаю программирование на вашем сайте и понимаю что ещё не всё освоил и не во всём разобрался. Вы большой мостак в этом деле. Мне ещё работать и работать. И впрямь как будто не початый край. Снова с нуля. Творите У вас хорошо получается!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=7410#respond' data-commentid="7410" data-postid="1377" data-belowelement="div-comment-7410" data-respondelement="respond" data-replyto="Комментарий к записи Александр" aria-label='Комментарий к записи Александр'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor even depth-2 parent" id="comment-7412">
+				<div id="div-comment-7412" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-7412">28 ноября 2019 в 10:08</a>		</div>
+
+		<p>Спасибо, мне очень приятно 😉</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=7412#respond' data-commentid="7412" data-postid="1377" data-belowelement="div-comment-7412" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment odd alt depth-3" id="comment-7800">
+				<div id="div-comment-7800" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/4a18fba398800b748cd3dfe0a3bf5b69?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">xzxz</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-7800">21 декабря 2019 в 08:08</a>		</div>
+
+		<p>да статья правда хорошая мне нравится все понятно</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=7800#respond' data-commentid="7800" data-postid="1377" data-belowelement="div-comment-7800" data-respondelement="respond" data-replyto="Комментарий к записи xzxz" aria-label='Комментарий к записи xzxz'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-4898">
+				<div id="div-comment-4898" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/4ea980ec445ac0f601e06a31432b24dc?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Евгений</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-4898">19 мая 2019 в 10:51</a>		</div>
+
+		<p>Сайт отличный. Помогает расширять свои знания в  IT</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=4898#respond' data-commentid="4898" data-postid="1377" data-belowelement="div-comment-4898" data-respondelement="respond" data-replyto="Комментарий к записи Евгений" aria-label='Комментарий к записи Евгений'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor odd alt depth-2" id="comment-5072">
+				<div id="div-comment-5072" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-5072">6 июня 2019 в 15:07</a>		</div>
+
+		<p>Очень надеюсь, что так и есть.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=5072#respond' data-commentid="5072" data-postid="1377" data-belowelement="div-comment-5072" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-4724">
+				<div id="div-comment-4724" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/870ae378343ae65c3617d805c84bd34f?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Вадим</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-4724">21 апреля 2019 в 23:19</a>		</div>
+
+		<p>Привет! Очень интересная статья, благодарю за потраченое время и подробное разъяснение профанам.<br />
+Особенно понравилось, упоминания Assembler. Было бы неплохо объяснить начинающим, что компьютер понимает только цифры, то что мы видим &#8212; является GUI, тоесть графической оболочкой. Самым лучшим примером, того как на самом деле должен выглядеть рабочий стол &#8212; является дистрибутив Arch.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=4724#respond' data-commentid="4724" data-postid="1377" data-belowelement="div-comment-4724" data-respondelement="respond" data-replyto="Комментарий к записи Вадим" aria-label='Комментарий к записи Вадим'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-4288">
+				<div id="div-comment-4288" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/3ef9dc5fa91f4132849bd243afa4d67e?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Не до 4еловек</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-4288">5 марта 2019 в 11:55</a>		</div>
+
+		<p>Спасибо огромное! Теперь буду учится)))))</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=4288#respond' data-commentid="4288" data-postid="1377" data-belowelement="div-comment-4288" data-respondelement="respond" data-replyto="Комментарий к записи Не до 4еловек" aria-label='Комментарий к записи Не до 4еловек'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-4080">
+				<div id="div-comment-4080" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/c83927980766a1ae38dc10ed99833544?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Creator Engines</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-4080">15 февраля 2019 в 18:43</a>		</div>
+
+		<p>Здравствуйте Юра! Я хотел бы научиться написать 3D игровой движок какие уроки прочитать по этой теме? Спасибо за ответ заранее.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=4080#respond' data-commentid="4080" data-postid="1377" data-belowelement="div-comment-4080" data-respondelement="respond" data-replyto="Комментарий к записи Creator Engines" aria-label='Комментарий к записи Creator Engines'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-3880">
+				<div id="div-comment-3880" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/909590dab3712de7eedc84c3dc51a4b8?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Alexey</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-3880">24 января 2019 в 13:32</a>		</div>
+
+		<p>Подскажите как вставлять код в комментарии, чтобы он сохранял структуру как в IDE(как примеры на сайте)? Использую Visual Studio.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=3880#respond' data-commentid="3880" data-postid="1377" data-belowelement="div-comment-3880" data-respondelement="respond" data-replyto="Комментарий к записи Alexey" aria-label='Комментарий к записи Alexey'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor even depth-2" id="comment-3882">
+				<div id="div-comment-3882" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-3882">24 января 2019 в 13:57</a>		</div>
+
+		<p>Форматирование кода задаётся специальным плагином &#8212; просто загружайте обычный код, а дальше я отформатирую его самостоятельно.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=3882#respond' data-commentid="3882" data-postid="1377" data-belowelement="div-comment-3882" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-3734">
+				<div id="div-comment-3734" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/48b82e5b2191f2232615319ab940c9d8?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Лиза</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-3734">5 января 2019 в 20:30</a>		</div>
+
+		<p>Здраствуйте. Спасибо за такой понятный урок, но не совсем поняла, что значит таблица в конце. Спасибо.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=3734#respond' data-commentid="3734" data-postid="1377" data-belowelement="div-comment-3734" data-respondelement="respond" data-replyto="Комментарий к записи Лиза" aria-label='Комментарий к записи Лиза'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor even depth-2" id="comment-3735">
+				<div id="div-comment-3735" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-3735">5 января 2019 в 20:40</a>		</div>
+
+		<p>Привет. Это всего лишь начало &#8212; продолжайте обучение 🙂</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=3735#respond' data-commentid="3735" data-postid="1377" data-belowelement="div-comment-3735" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-3141">
+				<div id="div-comment-3141" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/806c32ef3e7555fc126ea4f1aca663fb?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">KanuTaH_KaKaxa</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-3141">23 сентября 2018 в 09:28</a>		</div>
+
+		<p>Спасибо автору!!!<br />
+Все предельно ясно разжовано.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=3141#respond' data-commentid="3141" data-postid="1377" data-belowelement="div-comment-3141" data-respondelement="respond" data-replyto="Комментарий к записи KanuTaH_KaKaxa" aria-label='Комментарий к записи KanuTaH_KaKaxa'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor even depth-2" id="comment-3142">
+				<div id="div-comment-3142" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-3142">23 сентября 2018 в 11:59</a>		</div>
+
+		<p>Спасибо, что читаешь 🙂</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=3142#respond' data-commentid="3142" data-postid="1377" data-belowelement="div-comment-3142" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-3048">
+				<div id="div-comment-3048" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/80566e54323f55fb06773b7d492f00e2?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Константин</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-3048">30 августа 2018 в 22:22</a>		</div>
+
+		<p>Юра, значит мы вводим инструкции на высокоуровневом языке, компилятор переводит их в двоичный код, а процессор из этого двоичного кода еще какие-то инструкции ваяет? Просто из любопытства, если знаешь, напиши как они выглядят.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=3048#respond' data-commentid="3048" data-postid="1377" data-belowelement="div-comment-3048" data-respondelement="respond" data-replyto="Комментарий к записи Константин" aria-label='Комментарий к записи Константин'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment even depth-2" id="comment-3256">
+				<div id="div-comment-3256" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/ed9b37e84688c0a414983103f83c9279?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Владимир</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-3256">24 октября 2018 в 18:41</a>		</div>
+
+		<p>Микрокоманды для АЛУ, которое собсно и выполняет действия над битами данных.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=3256#respond' data-commentid="3256" data-postid="1377" data-belowelement="div-comment-3256" data-respondelement="respond" data-replyto="Комментарий к записи Владимир" aria-label='Комментарий к записи Владимир'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-2746">
+				<div id="div-comment-2746" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/5f0ea6bf897db4f2a1a05201a3c57b21?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Сергей</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-2746">10 июля 2018 в 08:30</a>		</div>
+
+		<p>Подскажите пожалуйста стоит мне начинать учить с c++ или лучше начать попроще изучить язык для понимания, до этого не занимался программированием. Спасибо!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=2746#respond' data-commentid="2746" data-postid="1377" data-belowelement="div-comment-2746" data-respondelement="respond" data-replyto="Комментарий к записи Сергей" aria-label='Комментарий к записи Сергей'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor even depth-2" id="comment-2762">
+				<div id="div-comment-2762" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-2762">12 июля 2018 в 21:22</a>		</div>
+
+		<p>Попробуйте и то, и другое. Затем и определите, что вам лучше подходит.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=2762#respond' data-commentid="2762" data-postid="1377" data-belowelement="div-comment-2762" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-2699">
+				<div id="div-comment-2699" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/5bdce745c6e211f44c2276c313268217?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">oleg</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-2699">30 июня 2018 в 09:12</a>		</div>
+
+		<p>Помогите &#8212; не понял.<br />
+Машинный код 10110000 01100001 получается в результате инструкции a = 97;</p>
+<p>10110000 == 176<br />
+01100001 == 97<br />
+&#039;a&#039; == 97<br />
+&#039;=&#039; == 61<br />
+&#039;пробел&#039; == 32<br />
+&#039;;&#039; == 59</p>
+<p>Как формируется машинный код ?<br />
+Спасибо.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=2699#respond' data-commentid="2699" data-postid="1377" data-belowelement="div-comment-2699" data-respondelement="respond" data-replyto="Комментарий к записи oleg" aria-label='Комментарий к записи oleg'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment even depth-2" id="comment-3255">
+				<div id="div-comment-3255" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/80566e54323f55fb06773b7d492f00e2?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Константин</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-3255">24 октября 2018 в 18:22</a>		</div>
+
+		<p>Олег, а ты выдели свой вопрос и спроси у Гугла &#8212; прозреешь!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=3255#respond' data-commentid="3255" data-postid="1377" data-belowelement="div-comment-3255" data-respondelement="respond" data-replyto="Комментарий к записи Константин" aria-label='Комментарий к записи Константин'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-2592">
+				<div id="div-comment-2592" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/1fff60cd93bd071a5210c2dd629fa689?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Blackson</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-2592">8 июня 2018 в 22:05</a>		</div>
+
+		<p>Отличный урок !</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=2592#respond' data-commentid="2592" data-postid="1377" data-belowelement="div-comment-2592" data-respondelement="respond" data-replyto="Комментарий к записи Blackson" aria-label='Комментарий к записи Blackson'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-2543">
+				<div id="div-comment-2543" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/7a55ce2b761fab80011d568f0d9e9732?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Марина</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-2543">2 июня 2018 в 11:08</a>		</div>
+
+		<p>Кажется, на просторах интернета я откопала сокровище) Такое понятное изложение информации на вес золота.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=2543#respond' data-commentid="2543" data-postid="1377" data-belowelement="div-comment-2543" data-respondelement="respond" data-replyto="Комментарий к записи Марина" aria-label='Комментарий к записи Марина'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor odd alt depth-2" id="comment-2545">
+				<div id="div-comment-2545" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-2545">2 июня 2018 в 11:17</a>		</div>
+
+		<p>Спасибо 🙂</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=2545#respond' data-commentid="2545" data-postid="1377" data-belowelement="div-comment-2545" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-1891">
+				<div id="div-comment-1891" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/14a6e20732e12c262860e04f2f5ed987?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Семён</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1891">12 февраля 2018 в 22:11</a>		</div>
+
+		<p>Просто великолепно ! Я скажу очень бонально : я тоже искал , что-то подобное , находил , но обучение там шло очень не поэтапно . Например , тоже же самый St***k ( не буду рекламировать ) , который на одном уроке давал действительные числа и в тоже время  множество функций , таже самая break &#8230;..<br />
+Но вот я нашел вас &#8230;. Сам тоже изучаю английский язык и совмещать полезно .  У вас очень хорошая манера излагаться  и главное : поэтапная подача . Пусть даже первая часть ( глава ) , которой даже опытные IT -специалисты  крайне мало уделяют внимание .  Ещё бы слепому набор научится<br />
+Сам люблю технологии , новинки и т.д  , но вот только в 16-17 лет дошли руки до обучения программ.Но в тоже самое время считаю , что возраст 16-20 лет  как раз для этого подходит , но учится не когда не поздно .<br />
+Огромное спасибо , добавился б в друзья , но вы не горите какой у вас name user в ВК . </p>
+<p>Ещё раз огромное спасибо &#8230; Путь начался ⚡⚡⚡⭐⭐</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1891#respond' data-commentid="1891" data-postid="1377" data-belowelement="div-comment-1891" data-respondelement="respond" data-replyto="Комментарий к записи Семён" aria-label='Комментарий к записи Семён'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor odd alt depth-2 parent" id="comment-1899">
+				<div id="div-comment-1899" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1899">13 февраля 2018 в 17:52</a>		</div>
+
+		<p>Я в свои 17-18 лет тоже, когда нужно было уже что-то учить по C++ (в колледже этот язык программирования был основным) &#8212; пытался искать на просторах Рунета годные уроки. Нашел несколько сайтов, и как вы тоже говорите, сегодня учим &quot;Hello, World!&quot;, завтра ООП, послезавтра паттерны проектирования и всё в этом роде. Так и задумался, что нет одного сайта в Рунете по изучению C++, где всё было бы поэтапно, с самых мелочей и уже до базовых вещей.</p>
+<p>Насчет учиться &#8212; учиться никогда не поздно, но чем раньше, тем лучше 🙂</p>
+<p>Спасибо, что читаете.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1899#respond' data-commentid="1899" data-postid="1377" data-belowelement="div-comment-1899" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment even depth-3 parent" id="comment-1904">
+				<div id="div-comment-1904" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/14a6e20732e12c262860e04f2f5ed987?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Семён</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1904">13 февраля 2018 в 23:00</a>		</div>
+
+		<p>Успехов и удачи во всём !</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1904#respond' data-commentid="1904" data-postid="1377" data-belowelement="div-comment-1904" data-respondelement="respond" data-replyto="Комментарий к записи Семён" aria-label='Комментарий к записи Семён'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor odd alt depth-4" id="comment-1905">
+				<div id="div-comment-1905" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1905">14 февраля 2018 в 10:27</a>		</div>
+
+		<p>Спасибо 🙂</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even depth-3" id="comment-4388">
+				<div id="div-comment-4388" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/e8bebd14b05dddf8481aa3cd78e1069f?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Waldemar</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-4388">15 марта 2019 в 22:04</a>		</div>
+
+		<p>Спасибо тебе, человечище! Хочу попробовать себя фрилансером после этого курса.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=4388#respond' data-commentid="4388" data-postid="1377" data-belowelement="div-comment-4388" data-respondelement="respond" data-replyto="Комментарий к записи Waldemar" aria-label='Комментарий к записи Waldemar'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1 parent" id="comment-1762">
+				<div id="div-comment-1762" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/9c6c9c8a2cd3afca545d65fafcd2a79e?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">ali</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1762">24 января 2018 в 21:15</a>		</div>
+
+		<p>Привет, а практика будет? Тесты, задания и всё такое.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1762#respond' data-commentid="1762" data-postid="1377" data-belowelement="div-comment-1762" data-respondelement="respond" data-replyto="Комментарий к записи ali" aria-label='Комментарий к записи ali'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor even depth-2" id="comment-1763">
+				<div id="div-comment-1763" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1763">24 января 2018 в 22:07</a>		</div>
+
+		<p>Всё есть в следующих уроках.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1763#respond' data-commentid="1763" data-postid="1377" data-belowelement="div-comment-1763" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1" id="comment-1756">
+				<div id="div-comment-1756" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/9c6c9c8a2cd3afca545d65fafcd2a79e?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">ali</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1756">23 января 2018 в 09:46</a>		</div>
+
+		<p>Хорошо, спасибо</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1756#respond' data-commentid="1756" data-postid="1377" data-belowelement="div-comment-1756" data-respondelement="respond" data-replyto="Комментарий к записи ali" aria-label='Комментарий к записи ali'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-1646">
+				<div id="div-comment-1646" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/cd5c7619e13819c8a3c7ba03c5b7f1bc?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Борис</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1646">6 января 2018 в 02:19</a>		</div>
+
+		<p>Здравствуйте. Приятно удивлён способом изложения материала. Начало курса очень хорошее. Неделю искал по этой теме и склонился к мысли, что люди либо не умеют изложить суть понятно, либо у них совсем другие цели.<br />
+   Большой плюс, что вы рассматриваете решение задачи при помощи разных программ.<br />
+    Так же заслуживает внимания мысль одновременного изучения английского со слепым методом печатания. Всё к одному.<br />
+   Что там получится у меня, не важно, мне на работу уже не надо, но ради интереса попробую.<br />
+   Успехов в достойной профессии. Спасибо.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1646#respond' data-commentid="1646" data-postid="1377" data-belowelement="div-comment-1646" data-respondelement="respond" data-replyto="Комментарий к записи Борис" aria-label='Комментарий к записи Борис'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor odd alt depth-2 parent" id="comment-1654">
+				<div id="div-comment-1654" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1654">8 января 2018 в 20:22</a>		</div>
+
+		<p>Здравствуйте. Приятно, что моя работа приносит кому-то пользу. Программирование и английский идут друг с другом (это не значит, что первое не может быть без второго) и, как по мне, отличный способ изучая программирование, подтягивать английский. Слепой набор очень экономит время при работе с компьютером вообще. Надеюсь, ваше желание не угаснет изучать программирование и дальше. Если есть к этому желание, то это довольно-таки интересное занятие.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1654#respond' data-commentid="1654" data-postid="1377" data-belowelement="div-comment-1654" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment even depth-3 parent" id="comment-1745">
+				<div id="div-comment-1745" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/9c6c9c8a2cd3afca545d65fafcd2a79e?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">ali</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1745">22 января 2018 в 09:57</a>		</div>
+
+		<p>Здравствуйте. Мне 16 и дело в том что я вообще не много знаю о компьютерах, о языках и обо всем этом можно сказать даже ничего не знаю. Я начал учить английский и хочу научиться языкам программирования подскажите что делать я с правильного сайта начал?</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1745#respond' data-commentid="1745" data-postid="1377" data-belowelement="div-comment-1745" data-respondelement="respond" data-replyto="Комментарий к записи ali" aria-label='Комментарий к записи ali'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor odd alt depth-4" id="comment-1748">
+				<div id="div-comment-1748" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1748">22 января 2018 в 13:55</a>		</div>
+
+		<p>Привет, попробуй. Увидишь, есть ли польза или нет.</p>
+
+		
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-1545">
+				<div id="div-comment-1545" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/70e5a9e9c07ea46c3e55540b76e676d7?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Ильнур</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1545">9 декабря 2017 в 21:58</a>		</div>
+
+		<p>Учитель!!!! А задачки будут?<br />
+Спасибо тебе за труд!!!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1545#respond' data-commentid="1545" data-postid="1377" data-belowelement="div-comment-1545" data-respondelement="respond" data-replyto="Комментарий к записи Ильнур" aria-label='Комментарий к записи Ильнур'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor odd alt depth-2" id="comment-1546">
+				<div id="div-comment-1546" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1546">9 декабря 2017 в 23:11</a>		</div>
+
+		<p>Да, вот <strong><a href="https://ravesli.com/praktika-chast-1/" rel="noopener noreferrer" target="_blank">первая часть задачек по C++</a></strong>, дальше больше)</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1546#respond' data-commentid="1546" data-postid="1377" data-belowelement="div-comment-1546" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1 parent" id="comment-1531">
+				<div id="div-comment-1531" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/5f0ea6bf897db4f2a1a05201a3c57b21?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Сергей</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1531">4 декабря 2017 в 18:54</a>		</div>
+
+		<p>Добрый вечер! Я читаю ваши уроки и меня увлекает и нравится, хочу научиться программировать, сначаля для общего развития, а потом как пойдёт, вдруг по этой сфере пойду вперёд. Я хочу спросить у вас, сам результат той программы или игры, как мне его видеть в конечном результате. Я имею в виду, например пишу игру какую-нибудь, написал алгоритмы и для себя видеть результат, области карты которой написал, цвет, фон, герой которого написал и т.д. Подскажите пожалуйста, спасибо!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1531#respond' data-commentid="1531" data-postid="1377" data-belowelement="div-comment-1531" data-respondelement="respond" data-replyto="Комментарий к записи Сергей" aria-label='Комментарий к записи Сергей'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor odd alt depth-2" id="comment-1533">
+				<div id="div-comment-1533" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1533">5 декабря 2017 в 12:59</a>		</div>
+
+		<p>Привет. Вам её нужно скомпилировать и запустить. Смотрите &#8216;<a href="https://ravesli.com/urok-5-kompilyatsiya-vashej-pervoj-programmy/" rel="noopener noreferrer" target="_blank"><strong>Урок 5. Компиляция вашей первой программы</strong></a>&#8216;.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1533#respond' data-commentid="1533" data-postid="1377" data-belowelement="div-comment-1533" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1" id="comment-1491">
+				<div id="div-comment-1491" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/22a0c577225c6c5bcd44ba6fc0ac0531?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Irina</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1491">24 ноября 2017 в 15:55</a>		</div>
+
+		<p>Наконец-то снова появилось желание учится по программиста. Третий год учусь уже на эту специальности и руки совсем начали опускаться. Потому что всё я слышу эти 3 года &#8212; мышка с шариком, монитор монохромный, таблицы в эксель.<br />
+И тут этот сайт просто как глоток свежего воздуха!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1491#respond' data-commentid="1491" data-postid="1377" data-belowelement="div-comment-1491" data-respondelement="respond" data-replyto="Комментарий к записи Irina" aria-label='Комментарий к записи Irina'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-even depth-1" id="comment-1448">
+				<div id="div-comment-1448" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/3a652a676fa711e8683c394c98a965a8?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Ибрагим</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-1448">14 ноября 2017 в 18:18</a>		</div>
+
+		<p>Спасибо большое брат, 2 месяца искал что-то похожее на это, век не забуду!</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=1448#respond' data-commentid="1448" data-postid="1377" data-belowelement="div-comment-1448" data-respondelement="respond" data-replyto="Комментарий к записи Ибрагим" aria-label='Комментарий к записи Ибрагим'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment even thread-odd thread-alt depth-1 parent" id="comment-887">
+				<div id="div-comment-887" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/978a8be7fd6105e893c4cdb772e021ff?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Ivanshka</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-887">7 июля 2017 в 20:47</a>		</div>
+
+		<p>Мне всего 16, неплохо знаю PascalABC.NET (пробовал написать небольшую игру, кое-что вышло, но до ума не довел из-за тормозов то ли языка, то ли железа, то ли кривости моих рук), HTML 5 и CSS 3 (пробовал сайт писать из интереса). В общем, кодить &#8212; моё хобби. Есть мечта (написать игру с какой-нибудь командой) и желание учиться, чтобы писать годные вещи, а не кучу говнокода, а ты пишешь такие уроки! Большое спасибо тебе, Юра!)</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=887#respond' data-commentid="887" data-postid="1377" data-belowelement="div-comment-887" data-respondelement="respond" data-replyto="Комментарий к записи Ivanshka" aria-label='Комментарий к записи Ivanshka'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor odd alt depth-2" id="comment-888">
+				<div id="div-comment-888" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-888">7 июля 2017 в 22:30</a>		</div>
+
+		<p>16 лет &#8212; как раз золотое время для изучения программирования. Больше практики, своих проектов и всё обязательно получиться!)</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=888#respond' data-commentid="888" data-postid="1377" data-belowelement="div-comment-888" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		<li class="comment even thread-even depth-1" id="comment-817">
+				<div id="div-comment-817" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/261ab6305cb28869bf911db26f8aa573?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">DEADLIGHT</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-817">22 июня 2017 в 21:31</a>		</div>
+
+		<p>спасибо за ресурс. начну свое самообучение&#8230;</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=817#respond' data-commentid="817" data-postid="1377" data-belowelement="div-comment-817" data-respondelement="respond" data-replyto="Комментарий к записи DEADLIGHT" aria-label='Комментарий к записи DEADLIGHT'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+		<li class="comment odd alt thread-odd thread-alt depth-1 parent" id="comment-797">
+				<div id="div-comment-797" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://secure.gravatar.com/avatar/b4e1557f2c961fb2239a4bd8532b2cd4?s=50&#038;d=monsterid&#038;r=g" width="50" height="50" alt="Аватар" class="avatar avatar-50wp-user-avatar wp-user-avatar-50 alignnone photo avatar-default" />			<cite class="fn">Дмитрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-797">19 июня 2017 в 11:09</a>		</div>
+
+		<p>Спасибо!<br />
+Благодаря тебе у меня вернулось желание обучаться на программиста.<br />
+Поступаю на второй курс, надеюсь, не слишком поздно начал)</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=797#respond' data-commentid="797" data-postid="1377" data-belowelement="div-comment-797" data-respondelement="respond" data-replyto="Комментарий к записи Дмитрий" aria-label='Комментарий к записи Дмитрий'>Ответить</a></div>
+				</div>
+				<ol class="children">
+		<li class="comment byuser comment-author-yura_ravesli bypostauthor even depth-2" id="comment-799">
+				<div id="div-comment-799" class="comment-body">
+				<div class="comment-author vcard">
+			<img src="https://ravesli.com/wp-content/uploads/2019/03/vkpablik3-150x150.jpg" width="50" height="50" alt="Юрий" class="avatar avatar-50 wp-user-avatar wp-user-avatar-50 alignnone photo" />			<cite class="fn">Юрий</cite><span class="says">:</span>		</div>
+		
+		<div class="comment-meta commentmetadata">
+			<a href="https://ravesli.com/urok-1-vvedenie-v-programmirovanie/#comment-799">19 июня 2017 в 15:21</a>		</div>
+
+		<p>Поверь, никогда не поздно, лишь бы нравилось.</p>
+
+		<div class="reply"><a rel='nofollow' class='comment-reply-link' href='https://ravesli.com/urok-1-vvedenie-v-programmirovanie/?replytocom=799#respond' data-commentid="799" data-postid="1377" data-belowelement="div-comment-799" data-respondelement="respond" data-replyto="Комментарий к записи Юрий" aria-label='Комментарий к записи Юрий'>Ответить</a></div>
+				</div>
+				</li><!-- #comment-## -->
+</ol><!-- .children -->
+</li><!-- #comment-## -->
+		</ol><!-- .comment-list -->
+
+		
+		
+		<div id="respond" class="comment-respond">
+		<h3 id="reply-title" class="comment-reply-title">Добавить комментарий <small><a rel="nofollow" id="cancel-comment-reply-link" href="/urok-1-vvedenie-v-programmirovanie/#respond" style="display:none;">Отменить ответ</a></small></h3><form action="https://ravesli.com/wp-comments-post.php" method="post" id="commentform" class="comment-form"><p class="comment-notes">Ваш E-mail не будет опубликован. Обязательные поля помечены <span class="required">*</span></p><p class="comment-form-author"><label for="author">Имя <span class="required">*</span></label> <input id="author" name="author" type="text" value="" size="30" maxlength="245" required='required' /></p>
+<p class="comment-form-email"><label for="email">Email <span class="required">*</span></label> <input id="email" name="email" type="text" value="" size="30" maxlength="100" required='required' /></p>
+
+<p class="comment-form-comment"><label for="comment">Комментарий</label> <textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525" required="required"></textarea></p><p class="comment-form-cookies-consent" style="clear:both;"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" /><label for="wp-comment-cookies-consent">Сохранить моё Имя и E-mail. Видеть комментарии, отправленные на модерацию</label></p>
+<p class='comment-form-subscriptions'><label for='subscribe-reloaded'><input type='checkbox' name='subscribe-reloaded' id='subscribe-reloaded' value='yes' /> Получать уведомления о новых комментариях по электронной почте. Вы можете <a href='https://ravesli.com/comment-subscriptions/?srp=1377&amp;srk=435d14f705f54cb7e326304fc1c8089c&amp;sra=s&amp;srsrc=f'>подписаться</a> без комментирования.</label></p><p class="form-submit"><input name="submit" type="submit" id="submit" class="submit" value="Отправить комментарий" /> <input type='hidden' name='comment_post_ID' value='1377' id='comment_post_ID' />
+<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+</p><p style="display: none;"><input type="hidden" id="akismet_comment_nonce" name="akismet_comment_nonce" value="068bdef425" /></p><input type="hidden" id="ak_js" name="ak_js" value="67"/><textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100" style="display: none !important;"></textarea></form>	</div><!-- #respond -->
+	
+
+</div><!-- #comments --></div>
+
+
+</div>
+</section>
+</div>
+
+
+<aside id="block-sidebar">
+	<div class="inner-sidebar">
+	
+	<div class="kanalTelegram">
+<a href="https://t.me/ravesli" target="_blank">TELEGRAM <i style="font-size: 1.8rem; margin-right: 4px;" class="fab fa-telegram-plane"></i>&nbsp;КАНАЛ</a>
+</div>
+
+
+	
+	<div class="kanalTelegram publicVk">
+<a href="https://vk.com/ravesli" target="_blank">ПАБЛИК&nbsp;<i style="font-size: 1.8rem; margin-left: 2px;" class="fab fa-vk"></i>&nbsp;</a>
+</div>
+
+
+<!--Poisk-->
+<div class="search-sidebar" style="max-width: 285px;">
+<script>
+  (function() {
+    var cx = '016462363216326039101:0x3giukcdge';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+        '//cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<div class="gcse-search"></div>
+</div>
+	
+	
+<div class="top3 traska">
+<span class="lines"></span>
+<p>ТОП СТАТЬИ</p>
+<ul>
+	<li><a href="/slovar-programmista-sleng-kotoryj-dolzhen-znat-kazhdyj-koder/"><i class="fa fa-book"></i>&nbsp;&nbsp;Словарь программиста. Сленг, который должен знать каждый кодер</a></li>
+		<li><a><i class="fa fa-plug"></i>&nbsp;&nbsp;Урок №1. Введение в программирование</a></li>
+			<li><a href="/70-besplatnyh-resursov-dlya-izucheniya-programmirovaniya/"><i class="fas fa-pen-alt"></i>&nbsp;&nbsp;70+ бесплатных ресурсов для изучения программирования</a></li>
+<li><a href="/poshagovoe-sozdanie-igry-same-game-urok-1/"><i class="fas fa-sort-alpha-up"></i>&nbsp;&nbsp;Урок №1: Введение в создание игры «SameGame» на C++/MFC</a></li>
+	<li><a href="/urok-4-ustanovka-integrirovannoj-sredy-razrabotki-ide-s/"><i class="fa fa-cog"></i>&nbsp;&nbsp;Урок №4. Установка IDE (Интегрированной Среды Разработки)</a></li>
+		<!-- <li><a href="/urok-8-struktura-programm-s/"><i class="fas fa-project-diagram"></i>&nbsp;&nbsp;Урок №8. Структура программ</a></li>-->
+
+</ul>
+</div>
+		
+
+
+
+
+<div>
+		
+	<style>
+.responsive-block-ads { width: 255px; height: 500px; }
+</style>
+	<div style="margin-top: 70px!important;">
+				
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Адаптивный блок (не только для контента статьи) -->
+<ins class="adsbygoogle responsive-block-ads"
+     style="display:block"
+     data-ad-client="ca-pub-1157306330783763"
+     data-ad-slot="6798639034"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+	
+	</div>
+	<div style="margin-top: 100px!important;">
+		
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Адаптивный блок (не только для контента статьи) -->
+<ins class="adsbygoogle responsive-block-ads"
+     style="display:block"
+     data-ad-client="ca-pub-1157306330783763"
+     data-ad-slot="6798639034"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+
+	
+	
+	<div style="margin-top: 100px!important;">
+		
+	
+	<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- Адаптивный блок (не только для контента статьи) -->
+<ins class="adsbygoogle responsive-block-ads"
+     style="display:block"
+     data-ad-client="ca-pub-1157306330783763"
+     data-ad-slot="6798639034"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script></div>
+	
+
+	</div>
+
+<script>
+var raz = document.getElementsByName('menu-state');
+for (var i = 0; i < raz.length; i++) {
+  raz[i].onclick = function() {
+    localStorage.setItem('IRadioRaz', this.value);
+  }
+}
+if(localStorage.getItem('IRadioRaz')) {
+  var IRadioRaz = localStorage.getItem('IRadioRaz');
+  document.querySelector('input[name="menu-state"][value="' + IRadioRaz + '"]').setAttribute('checked','checked');
+}
+</script>
+
+</div>
+</aside> <!--Konec block-sidebar--><script type='text/javascript' id='wp-postratings-js-extra'>
+/* <![CDATA[ */
+var ratingsL10n = {"plugin_url":"https:\/\/ravesli.com\/wp-content\/plugins\/wp-postratings","ajax_url":"https:\/\/ravesli.com\/wp-admin\/admin-ajax.php","text_wait":"\u041f\u043e\u0436\u0430\u043b\u0443\u0439\u0441\u0442\u0430, \u043d\u0435 \u0433\u043e\u043b\u043e\u0441\u0443\u0439\u0442\u0435 \u0437\u0430 \u043d\u0435\u0441\u043a\u043e\u043b\u044c\u043a\u043e \u0437\u0430\u043f\u0438\u0441\u0435\u0439 \u043e\u0434\u043d\u043e\u0432\u0440\u0435\u043c\u0435\u043d\u043d\u043e.","image":"stars_crystal","image_ext":"gif","max":"5","show_loading":"1","show_fading":"1","custom":"0"};
+var ratings_mouseover_image=new Image();ratings_mouseover_image.src="https://ravesli.com/wp-content/plugins/wp-postratings/images/stars_crystal/rating_over.gif";;
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://ravesli.com/wp-content/plugins/wp-postratings/js/postratings-js.js' id='wp-postratings-js'></script>
+<script type='text/javascript' src='https://ravesli.com/wp-includes/js/wp-embed.min.js' id='wp-embed-js'></script>
+<script async="async" type='text/javascript' src='https://ravesli.com/wp-content/plugins/akismet/_inc/form.js' id='akismet-form-js'></script>
+<footer id="block-footer">
+
+<div class="block-footer-links">
+<ul>
+	<li>
+		<a href="/"><span id="nadpis2">Ravesli</span></a>
+	</li>
+		<li>
+		<span style="color: white;">-</span>&nbsp;&nbsp;<a href="https://ravesli.com/o-proekte/">О проекте/Контакты</a>&nbsp;&nbsp;<span style="color: white;">-</span>
+	</li>
+	<li>
+		<span style="color: white;">-</span>&nbsp;&nbsp;<a href="https://ravesli.com/polzovatelskoe-soglashenie/">Пользовательское Соглашение</a>&nbsp;&nbsp;<span style="color: white;">-</span>
+	</li>
+	<li>
+		<span style="color: white;">-</span>&nbsp;&nbsp;<a href="https://ravesli.com/stati/">Все статьи</a>&nbsp;&nbsp;<span style="color: white;">-</span>
+	</li>
+	<li>
+		<span class="copyright">Copyright © 2015 - 2021</span>
+	</li>
+</ul>
+</div>
+
+
+
+
+
+</footer><!--Конец block-footer-->
+
+</div> <!--Конец block-body-->
+
+	<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67040902-1', 'auto');
+  ga('send', 'pageview');
+
+	</script>
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(41360954, "init", {
+        id:41360954,
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/41360954" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</body>
+</html>
