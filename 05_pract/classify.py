@@ -1,7 +1,6 @@
 NOT_FIT = 1         # кандидатка не подходит
 FIT = 2             # кандидатка подходит
 
-
 def classify(X):
     answer = 0
     iq_level, articles_count, has_education, ratio = X
