@@ -38,7 +38,6 @@ obj = np.array([height, weight]).astype(np.float64)
 # классификация методом k ближайших соседей
 k = 3
 object_class = k_nearest(X, k, obj)
-1
 # вывод результата классификации
 monkeys = {1: 'lemur', 2: 'schimpanze', 3: 'gorilla', 4: 'orangutan'}
 print(monkeys[object_class])
