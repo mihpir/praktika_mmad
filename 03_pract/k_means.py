@@ -25,7 +25,6 @@ def class_of_each_point(X, centers):
   # поиск ближайшего центра для каждой точки
   return np.argmin(distances, axis=1)
 
-
 def kmeans(k, X):
 
   # TODO: инициализировать переменные m и n
@@ -57,10 +56,6 @@ def kmeans(k, X):
   for i in range(n):
       for j in range (k):
           centers[j][i] = random.uniform(np.min(X, axis=0)[i], np.max(X, axis=0)[i])
-
-
-
-
 
   # приписываем каждую точку к заданному классу
   curr_iteration = class_of_each_point(X, centers)
