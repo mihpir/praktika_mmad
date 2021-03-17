@@ -1,3 +1,4 @@
+#вариант №2
 from PIL import Image
 import numpy as np
 from sklearn import linear_model
