@@ -5,8 +5,8 @@ from PyQt5.QtWidgets import QApplication, QMessageBox, QDesktopWidget, QMainWind
 from PyQt5.QtGui import QIcon, QPixmap
 
 class MainWindow(QMainWindow):
-    images = ['1.png', '2.png', '3.jpg', '4.jpg', '5.jpg',
-              '6.jpg', '7.png', '8.jpg', '9.jpg', '10.png']
+    images = ['im/1.png', 'im/2.png', 'im/3.jpg', 'im/4.jpg', 'im/5.jpg',
+              'im/6.jpg', 'im7.png', 'im/8.jpg', 'im/9.jpg', 'im/10.png']
     index = 0
     def __init__(self):
         super().__init__()
