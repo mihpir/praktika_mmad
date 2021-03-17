@@ -3,6 +3,7 @@ import codecs
 import re
 
 # открываем документ
+# https://ravesli.com/urok-1-vvedenie-v-programmirovanie/
 doc = bs(codecs.open('example.html', encoding='utf-8', mode='r').read(), 'html.parser')
 
 # извлечение данных из статьи
