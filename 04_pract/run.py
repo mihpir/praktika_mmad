@@ -40,4 +40,4 @@ k = 3
 object_class = k_nearest(X, k, obj)
 # вывод результата классификации
 monkeys = {1: 'lemur', 2: 'schimpanze', 3: 'gorilla', 4: 'orangutan'}
-print(monkeys[object_class])
+print('/nРезультат классификации: ', monkeys[object_class])
