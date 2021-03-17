@@ -1,3 +1,4 @@
+#вариант №5
 import re
 
 def rex(mas, reg):
