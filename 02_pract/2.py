@@ -1,8 +1,12 @@
 #вариант №5
 import random
 def absDiff(m1, m2):
+    if len(m1)!=len(m2): raise Exception("Разные размеры массивов")
     return [abs(m1[i]-m2[i]) for i in range(len(m1))]
-print('Задание 1:\t', absDiff([4,7,9,8], [1,17,2,8]), '\n')
+try:
+    print('Задание 1:\t', absDiff([4,7,9,8], [1,17,2,8]), '\n')
+except Exception as e:
+    print("Было сгенерировано исключение: " + str(e) + "\n")
 
 def fib(n):
     if n == 1: return [1]
