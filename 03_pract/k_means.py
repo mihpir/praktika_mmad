@@ -17,10 +17,7 @@ def class_of_each_point(X, centers):
   k = len(centers)
 
   # матрица расстояний от каждой точки до каждого центра
-  distances = np.zeros((m, k))
-  for i in range(m):
-    for j in range(k):
-      distances[i, j] = dist(centers[j], X[i])
+  distances = [[dist(centers[j], X[i]) for j in range(k)] for i in range(m)]
 
   # поиск ближайшего центра для каждой точки
   return np.argmin(distances, axis=1)
@@ -52,10 +49,7 @@ def kmeans(k, X):
   # Для вычисления минимальных и максимальных значений по столбцам (признакам)
   # матрицы X используйте функции min(X, axis=0) и max(X, axis=0) библиотеки NumPy соответственно.
   # centers = ...
-  centers = np.zeros((k,n))
-  for i in range(n):
-      for j in range (k):
-          centers[j][i] = random.uniform(np.min(X, axis=0)[i], np.max(X, axis=0)[i])
+  centers = np.random.uniform(np.min(X, axis=0), np.max(X, axis=0), (k, n))
 
   # приписываем каждую точку к заданному классу
   curr_iteration = class_of_each_point(X, centers)
