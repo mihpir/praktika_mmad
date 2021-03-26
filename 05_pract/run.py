@@ -1,6 +1,5 @@
 import numpy as np
 from decision_tree import *
-import classify as clf
 
 # обучающее множество
 X = np.array([
@@ -22,11 +21,12 @@ Y = np.array([FIT, FIT, FIT, FIT, NOT_FIT, FIT, FIT, NOT_FIT, NOT_FIT, NOT_FIT])
 scale = np.array([NUMERICAL, CATEGORICAL, CATEGORICAL, NUMERICAL])
 
 # рекурсивное построение дерева решений
-decision_tree(X, Y, scale)
+dt = DecisionTree()
+dt.fit(X, Y, scale)
 
 # классификация каждого примера с помощью
 # классификатора, созданного на основе дерева
-y = np.array([clf.classify(X[i, :]) for i in range(len(X))])
+y = np.array([dt.predict(X[i, :]) for i in range(len(X))])
 
 # классификация успешна, если все примеры правильно классифицированы
 if np.all(y == Y):
@@ -36,7 +36,7 @@ else:
 
 # проверка себя с помощью классификатора
 # TODO: после того, как вы построили дерево решений и реализовали на его
-# основе функцию classify, раскомментируйте код ниже и проверьте себя,
+# основе функцию predict, раскомментируйте код ниже и проверьте себя,
 # подходите ли вы на роль ассистентки профессора Буковски :)
 print('Test yourself!')
 iq = int(input('iq: '))
@@ -44,7 +44,7 @@ articles = int(input('articles: '))
 obr = int(input('obr: '))
 ratio = float(input('ratio: '))
 
-if clf.classify(np.array([iq, articles, obr, ratio])) == FIT:
+if dt.predict(np.array([iq, articles, obr, ratio])) == FIT:
      print('You are passed!')
 else:
      print('You are not passed, sorry...')
